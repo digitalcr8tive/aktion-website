@@ -41,11 +41,13 @@
 }
 
 .about-team__portrait--shared {
-  aspect-ratio: 16 / 10;
+  width: min(100%, 720px);
+  justify-self: end;
 }
 
 .about-team__portrait--shared img {
-  object-position: center 42%;
+  height: auto;
+  object-fit: contain;
 }
 
 .about-team__profiles {
@@ -118,10 +120,6 @@
     max-width: 14ch;
   }
 
-  .about-team__portrait--shared {
-    aspect-ratio: 4 / 3;
-  }
-
   .team-profile > .about-team__portrait {
     width: min(100%, 620px);
     aspect-ratio: 4 / 5;
@@ -144,14 +142,6 @@
 @media (max-width: 520px) {
   .about-team__intro {
     gap: 2rem;
-  }
-
-  .about-team__portrait--shared {
-    aspect-ratio: 1 / 1;
-  }
-
-  .about-team__portrait--shared img {
-    object-position: center;
   }
 
   .team-profile {

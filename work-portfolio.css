@@ -1,0 +1,277 @@
+.work-portfolio {
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+.work-portfolio__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .7fr);
+  gap: 2rem clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.work-portfolio__heading p {
+  max-width: 48ch;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+.work-card {
+  position: relative;
+  grid-column: span 6;
+  min-height: clamp(480px, 52vw, 700px);
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--white);
+  text-align: left;
+  cursor: pointer;
+}
+
+.work-card--poetry {
+  grid-column: span 5;
+}
+
+.work-card--survivor {
+  grid-column: span 7;
+}
+
+.work-card--kickymats {
+  grid-column: 1 / -1;
+  min-height: clamp(460px, 44vw, 650px);
+}
+
+.work-card__media,
+.work-card__shade {
+  position: absolute;
+  inset: 0;
+}
+
+.work-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s var(--ease), filter .5s ease;
+}
+
+.work-card--poetry .work-card__media img {
+  object-position: center 38%;
+}
+
+.work-card--survivor .work-card__media img {
+  object-position: center;
+}
+
+.work-card--kickymats .work-card__media img {
+  object-position: center 32%;
+}
+
+.work-card__shade {
+  background: linear-gradient(180deg, transparent 35%, oklch(.04 0 0 / .86) 100%);
+}
+
+.work-card__content {
+  position: absolute;
+  inset: auto clamp(1.5rem, 3vw, 2.6rem) clamp(1.5rem, 3vw, 2.6rem);
+  z-index: 2;
+  display: grid;
+  gap: .7rem;
+}
+
+.work-card__content strong {
+  max-width: 15ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 4vw, 4.6rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.work-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.2rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.work-card__credit {
+  font-size: .92rem;
+  color: oklch(.92 0 0);
+}
+
+.work-card__play {
+  position: absolute;
+  top: clamp(1.25rem, 2vw, 2rem);
+  right: clamp(1.25rem, 2vw, 2rem);
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+}
+
+.work-card__play svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.work-card__play circle,
+.work-card__play path {
+  fill: oklch(.08 0 0 / .58);
+  stroke: var(--white);
+  stroke-width: 1.5;
+}
+
+.work-card__play path {
+  fill: var(--white);
+  stroke: none;
+}
+
+.work-card:hover .work-card__media img,
+.work-card:focus-visible .work-card__media img {
+  transform: scale(1.025);
+  filter: saturate(1.08);
+}
+
+.work-card:focus-visible {
+  outline-offset: 5px;
+}
+
+.work-player {
+  width: min(1120px, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  overflow: auto;
+  background: oklch(.07 0 0);
+  color: var(--white);
+}
+
+.work-player::backdrop {
+  background: oklch(.03 0 0 / .88);
+}
+
+.work-player__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.15rem 1.35rem;
+}
+
+.work-player__topbar h2 {
+  margin-top: .2rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.work-player__topbar p {
+  color: oklch(.72 .1 354.5);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.work-player__close {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid oklch(1 0 0 / .35);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.work-player__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.work-player__close path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+.work-player__media {
+  aspect-ratio: 16 / 9;
+  background: oklch(.02 0 0);
+}
+
+.work-player__media iframe,
+.work-player__media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.work-player__media video {
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .work-portfolio__heading {
+    grid-template-columns: 1fr;
+  }
+
+  .work-card,
+  .work-card--poetry,
+  .work-card--survivor,
+  .work-card--kickymats {
+    grid-column: 1 / -1;
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-card,
+  .work-card--poetry,
+  .work-card--survivor,
+  .work-card--kickymats {
+    min-height: 470px;
+  }
+
+  .work-card__content strong {
+    font-size: clamp(2.2rem, 12vw, 3.4rem);
+  }
+
+  .work-card__play {
+    width: 48px;
+    height: 48px;
+  }
+
+  .work-player {
+    width: 100%;
+    max-height: 100dvh;
+  }
+
+  .work-player__media {
+    aspect-ratio: 9 / 16;
+    max-height: calc(100dvh - 82px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card__media img {
+    transition: none;
+  }
+}
