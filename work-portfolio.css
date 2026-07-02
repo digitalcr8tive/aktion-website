@@ -190,17 +190,22 @@
 }
 
 .work-player__close {
+  display: grid;
   flex: 0 0 44px;
   width: 44px;
   height: 44px;
+  place-items: center;
   border: 1px solid oklch(1 0 0 / .35);
   border-radius: 50%;
+  padding: 0;
   background: transparent;
   color: var(--white);
+  line-height: 0;
   cursor: pointer;
 }
 
 .work-player__close svg {
+  display: block;
   width: 20px;
   height: 20px;
 }
@@ -212,7 +217,9 @@
 }
 
 .work-player__media {
+  position: relative;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
   background: oklch(.02 0 0);
 }
 
@@ -226,6 +233,16 @@
 
 .work-player__media video {
   object-fit: contain;
+}
+
+.work-player__embed-mask {
+  position: absolute;
+  inset: 0;
+  background-color: oklch(.02 0 0);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  clip-path: polygon(calc(100% - 76px) 0, 100% 0, 100% 76px, calc(100% - 76px) 76px);
 }
 
 @media (max-width: 900px) {
