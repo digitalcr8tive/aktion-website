@@ -39,14 +39,6 @@ if (workPlayer) {
         frame.allow = 'autoplay; fullscreen';
         frame.allowFullscreen = true;
         playerMedia.append(frame);
-
-        const embedMask = document.createElement('span');
-        embedMask.className = 'work-player__embed-mask';
-        embedMask.setAttribute('aria-hidden', 'true');
-        if (project.dataset.videoPoster) {
-          embedMask.style.backgroundImage = `url("${project.dataset.videoPoster}")`;
-        }
-        playerMedia.append(embedMask);
       }
 
       document.body.style.overflow = 'hidden';

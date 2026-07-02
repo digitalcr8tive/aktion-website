@@ -231,18 +231,14 @@
   border: 0;
 }
 
-.work-player__media video {
-  object-fit: contain;
+.work-player__media iframe {
+  width: calc(100% + 160px);
+  max-width: none;
+  margin-left: -80px;
 }
 
-.work-player__embed-mask {
-  position: absolute;
-  inset: 0;
-  background-color: oklch(.02 0 0);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  clip-path: polygon(calc(100% - 76px) 0, 100% 0, 100% 76px, calc(100% - 76px) 76px);
+.work-player__media video {
+  object-fit: contain;
 }
 
 @media (max-width: 900px) {
