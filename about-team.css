@@ -2,6 +2,19 @@
   overflow: hidden;
 }
 
+.team-hero img {
+  object-position: center 34%;
+}
+
+.about-team__heading--page {
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  text-align: center;
+}
+
+.about-team__heading--page h2 {
+  max-width: none;
+}
+
 .about-team__intro {
   display: grid;
   grid-template-columns: minmax(0, .82fr) minmax(340px, 1.18fr);
@@ -64,7 +77,8 @@
 }
 
 .team-profile > .about-team__portrait {
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  aspect-ratio: 7 / 10;
 }
 
 .team-profile > .about-team__portrait img {
@@ -73,6 +87,10 @@
 
 .team-profile--reverse > .about-team__portrait {
   grid-column: 2;
+}
+
+.team-profile--reverse {
+  grid-template-columns: minmax(0, 1.22fr) minmax(280px, .78fr);
 }
 
 .team-profile--reverse > .team-profile__content {
@@ -122,7 +140,7 @@
 
   .team-profile > .about-team__portrait {
     width: min(100%, 620px);
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 7 / 10;
   }
 
   .team-profile--reverse > .about-team__portrait,
