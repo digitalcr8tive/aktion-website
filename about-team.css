@@ -3,16 +3,7 @@
 }
 
 .team-hero img {
-  object-position: center 34%;
-}
-
-.about-team__heading--page {
-  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
-  text-align: center;
-}
-
-.about-team__heading--page h2 {
-  max-width: none;
+  object-position: center;
 }
 
 .about-team__intro {
@@ -55,12 +46,14 @@
 
 .about-team__portrait--shared {
   width: min(100%, 720px);
+  aspect-ratio: 4 / 3;
   justify-self: end;
 }
 
 .about-team__portrait--shared img {
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
 }
 
 .about-team__profiles {
