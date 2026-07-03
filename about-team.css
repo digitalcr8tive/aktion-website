@@ -46,14 +46,12 @@
 
 .about-team__portrait--shared {
   width: min(100%, 720px);
-  aspect-ratio: 4 / 3;
   justify-self: end;
 }
 
 .about-team__portrait--shared img {
-  height: 100%;
-  object-fit: cover;
-  object-position: center 32%;
+  height: auto;
+  object-fit: contain;
 }
 
 .about-team__profiles {
@@ -128,7 +126,14 @@
   }
 
   .about-team__heading h2 {
-    max-width: 14ch;
+    max-width: none;
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    line-height: 1.02;
+  }
+
+  .about-team__portrait--shared {
+    width: 100%;
+    justify-self: stretch;
   }
 
   .team-profile > .about-team__portrait {
